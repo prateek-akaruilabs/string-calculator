@@ -1,0 +1,23 @@
+<div class='container' style="margin-top: 10%">
+    <div class='row'>
+        <div class='card col-md-8 offset-2'>
+            <div class="card-body">
+                <h4 class="card-title text-center">String Calculator</h4><br />  
+                <%= form_tag '/calculate', method: :post, class: "row gy-2" do |f| %>    
+                    <div class="col-md-12">
+                        <%= label_tag 'input_label', "Please enter the string of numbers to calculate the sum:", class: 'form-label' %>
+                    </div>
+                    <div class="col-md-12">
+                        <%= text_field_tag :input, "", class: 'form-control' %>
+                    </div>
+                    <div class="col-md-12">
+                        <%= submit_tag "Submit", class: 'btn btn-primary' %>
+                    </div>
+                    <div class="col-md-12 text-center">
+                        <h5>Result: <%= !@result ? 'Please enter the string of numbers' : @result %></h5>
+                    </div>
+                <% end %>
+            </div>
+        </div>
+    </div>
+</div>
